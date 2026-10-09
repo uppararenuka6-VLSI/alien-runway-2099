@@ -1,0 +1,49 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIEN RUNWAY 2099 | Style Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>ALIEN RUNWAY 2099</h1>
+        <p>Discover your next look.</p>
+
+        <label for="occasion">Choose Your Occasion</label>
+        <select id="occasion">
+            <option value="">Select Occasion</option>
+            <option value="college">College</option>
+            <option value="party">Party</option>
+            <option value="casual">Casual</option>
+        </select>
+
+        <label for="style">Choose Your Style</label>
+        <select id="style">
+            <option value="">Select Style</option>
+            <option value="traditional">Traditional</option>
+            <option value="western">Western</option>
+            <option value="minimal">Minimal</option>
+        </select>
+
+        <button onclick="findStyle()">GENERATE MY LOOK</button>
+
+        <div id="result">
+    <h2>Your Outfit Inspiration</h2>
+
+    <img
+        src="./images/college-western.png"
+        alt="College western outfit"
+        width="300"
+        style="display: block; max-width: 100%; height: auto;"
+    >
+</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

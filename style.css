@@ -1,0 +1,529 @@
+/* ========================================
+   ALIEN RUNWAY 2099 — STYLE PICKER
+   Experimental futuristic fashion interface
+======================================== */
+
+:root {
+    --void: #090910;
+    --acid: #d7ff00;
+    --pink: #ff38bd;
+    --blue: #4b5bff;
+    --white: #f7f4ff;
+    --muted: #aaa6ba;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 18px;
+    overflow-x: hidden;
+    font-family: "Arial Black", Arial, sans-serif;
+    color: var(--white);
+
+    background-color: var(--void);
+    background-image:
+        radial-gradient(ellipse at 10% 20%,
+            rgba(255, 56, 189, 0.22), transparent 35%),
+        radial-gradient(ellipse at 90% 75%,
+            rgba(75, 91, 255, 0.25), transparent 35%),
+        linear-gradient(
+            135deg,
+            transparent 48%,
+            rgba(215, 255, 0, 0.035) 49%,
+            transparent 50%
+        );
+
+    background-size: auto, auto, 24px 24px;
+}
+
+/* Background decoration */
+
+body::before {
+    content: "FASHION FROM ANOTHER DIMENSION";
+    position: fixed;
+    top: 12%;
+    left: -30px;
+    z-index: -1;
+    white-space: nowrap;
+    font-size: clamp(30px, 7vw, 85px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    color: rgba(215, 255, 0, 0.07);
+    transform: rotate(-12deg);
+    pointer-events: none;
+}
+
+body::after {
+    content: "2099 // STYLE.EXE // REALITY OPTIONAL";
+    position: fixed;
+    right: -80px;
+    bottom: 15%;
+    z-index: -1;
+    white-space: nowrap;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: rgba(255, 56, 189, 0.25);
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+
+/* Main futuristic panel */
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 42px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(32, 29, 49, 0.98),
+            rgba(12, 12, 21, 0.98)
+        );
+
+    border: 1px solid var(--acid);
+    border-radius: 4px 45px 4px 45px;
+
+    box-shadow:
+        8px 8px 0 var(--pink),
+        16px 16px 0 rgba(75, 91, 255, 0.55),
+        0 0 45px rgba(75, 91, 255, 0.15);
+
+    animation: materialize 0.8s ease-out;
+}
+
+@keyframes materialize {
+    from {
+        opacity: 0;
+        transform: translateY(25px) skewY(2deg);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+        filter: blur(0);
+    }
+}
+
+/* Main heading */
+
+h1 {
+    position: relative;
+    margin: 10px 0 20px;
+    color: var(--acid);
+
+    font-size: clamp(38px, 9vw, 72px);
+    line-height: 0.92;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+
+    text-shadow:
+        3px 3px 0 var(--pink),
+        -2px -2px 0 rgba(75, 91, 255, 0.8);
+}
+
+/* Subtitle */
+
+p {
+    margin: 22px 0;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Section headings */
+
+h2 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+
+    border-left: 4px solid var(--pink);
+
+    color: var(--pink);
+    font-family: monospace;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* Futuristic selection controls */
+
+select {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 10px;
+    padding: 15px;
+
+    border: 1px solid #4b4660;
+    border-left: 5px solid var(--acid);
+    border-radius: 2px;
+
+    background-color: #151421;
+    color: var(--white);
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+select:hover {
+    border-color: var(--pink);
+    transform: translateX(3px);
+}
+
+select:focus {
+    border-color: var(--acid);
+    box-shadow: 5px 5px 0 var(--pink);
+    transform: translateX(-3px);
+}
+
+select option {
+    background-color: #151421;
+    color: var(--white);
+}
+
+/* Alien control button */
+
+button {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 58px;
+    margin-top: 32px;
+    padding: 17px 20px;
+
+    border: 0;
+    border-radius: 2px;
+
+    background: var(--acid);
+    color: var(--void);
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    clip-path: polygon(
+        0 0,
+        94% 0,
+        100% 25%,
+        100% 100%,
+        6% 100%,
+        0 75%
+    );
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    background: var(--pink);
+    color: white;
+    transform: translate(-4px, -4px);
+    filter: drop-shadow(6px 6px 0 var(--blue));
+}
+
+button:active {
+    transform: translate(1px, 1px) scale(0.98);
+}
+
+/* Fashion verdict display */
+
+#result {
+    position: relative;
+    margin-top: 32px;
+    padding: 22px;
+
+    border: 1px dashed var(--pink);
+    border-right: 5px solid var(--acid);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 56, 189, 0.08),
+            rgba(75, 91, 255, 0.12)
+        );
+
+    color: var(--acid);
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.9;
+
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+#result:empty {
+    display: none;
+}
+
+/* Selection highlight */
+
+::selection {
+    color: var(--void);
+    background: var(--acid);
+}
+
+/* Mobile-friendly layout */
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 30px 20px;
+
+        border-radius: 3px 28px 3px 28px;
+
+        box-shadow:
+            5px 5px 0 var(--pink),
+            10px 10px 0 rgba(75, 91, 255, 0.55);
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        letter-spacing: 2px;
+    }
+
+    button {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Accessibility: respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+```css
+/* Futuristic outfit image */
+#result img {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border: 2px solid #b6ff00;
+    border-radius: 16px;
+    box-shadow:
+        0 0 12px #b6ff00,
+        0 0 25px rgba(255, 0, 200, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#result img:hover {
+    transform: scale(1.04);
+    box-shadow:
+        0 0 18px #b6ff00,
+        0 0 35px #ff00c8;
+}
+```
+
+/* RESPONSIVE DESIGN: Mobile, Tablet & Laptop */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+select,
+button {
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+}
+
+#result {
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#result img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin: 20px auto;
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: clamp(24px, 7vw, 34px);
+        overflow-wrap: anywhere;
+    }
+
+    p,
+    label {
+        font-size: 14px;
+    }
+
+    select,
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+}
+
+/* ALIEN RUNWAY 2099 - Futuristic Glow Effects */
+
+.container {
+    border: 1px solid rgba(0, 255, 180, 0.45);
+    box-shadow:
+        0 0 15px rgba(0, 255, 180, 0.12),
+        0 0 35px rgba(0, 255, 180, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.container:hover {
+    border-color: rgba(0, 255, 180, 0.8);
+    box-shadow:
+        0 0 20px rgba(0, 255, 180, 0.2),
+        0 0 45px rgba(0, 255, 180, 0.12);
+}
+
+#result img {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 18px rgba(255, 0, 200, 0.2);
+}
+
+#result img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 0, 200, 0.45);
+}
+
+button {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 255, 180, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container,
+    #result img,
+    button {
+        transition: none;
+    }
+
+    #result img:hover,
+    button:hover {
+        transform: none;
+    }
+}
+
+/* FUTURISTIC LIVE PREVIEW PANEL */
+
+#result {
+    margin-top: 28px;
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 180, 0.25);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(0, 255, 180, 0.06),
+        rgba(255, 0, 200, 0.06),
+        rgba(20, 20, 45, 0.35)
+    );
+    box-shadow:
+        inset 0 0 18px rgba(0, 255, 180, 0.04),
+        0 0 20px rgba(0, 255, 180, 0.06);
+    overflow-wrap: anywhere;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#result:has(img) {
+    border-color: rgba(0, 255, 180, 0.55);
+    box-shadow:
+        inset 0 0 20px rgba(0, 255, 180, 0.05),
+        0 0 24px rgba(0, 255, 180, 0.12);
+}
+
+#result img {
+    border: 1px solid rgba(255, 0, 200, 0.35);
+    background: rgba(10, 10, 25, 0.7);
+}
+
+@media (max-width: 480px) {
+    #result {
+        padding: 14px;
+        margin-top: 20px;
+    }
+}
